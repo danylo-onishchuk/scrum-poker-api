@@ -1,0 +1,17 @@
+{
+  "name": "poker-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Onishchuk",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.8.0"
+  },
+  "optionalDependencies": {
+    "utf-8-validate": "^5.0.9"
+  }
+}
