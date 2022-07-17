@@ -11,9 +11,7 @@ const server = express()
 
 const clients = [];
 
-const webSocketServer = new WebSocketServer.Server({
-  port: server.port,
-});
+const webSocketServer = new WebSocketServer.Server({ server });
 webSocketServer.on('connection', function(ws) {
 
   const id = Math.random();
