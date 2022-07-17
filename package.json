@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test"
   },
-  "author": "Onishchuk",
+  "author": "Danylo Onishchuk",
   "license": "ISC",
   "dependencies": {
     "bufferutil": "^4.0.6",
