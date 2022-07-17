@@ -52,6 +52,8 @@ webSocketServer.on('connection', function(ws) {
       clients.findIndex(client => client.id === id),
       1,
     )
+
+    openConnection(clients); //to do: make right method 
   });
 });
 
