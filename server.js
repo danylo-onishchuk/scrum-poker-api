@@ -1,10 +1,17 @@
 const WebSocketServer = new require('ws');
+const express = new require('express');
+
+const PORT = process.env.PORT || 9000;
+const INDEX = '/index.html';
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
 
 const clients = [];
 
-const webSocketServer = new WebSocketServer.Server({
-  port: 9000
-});
+const webSocketServer = new WebSocketServer.Server({ server });
 webSocketServer.on('connection', function(ws) {
 
   const id = Math.random();
@@ -47,8 +54,6 @@ webSocketServer.on('connection', function(ws) {
     )
   });
 });
-
-console.log('Server started at 8000 port');
 
 const  openConnection = (clients) => {
   const prepareClients  = clients.map((client) => ( 
