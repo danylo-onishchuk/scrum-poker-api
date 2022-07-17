@@ -13,6 +13,7 @@ const clients = [];
 
 const webSocketServer = new WebSocketServer.Server({ server });
 webSocketServer.on('connection', function(ws) {
+  console.log('websocket ready')
 
   const id = Math.random();
   ws.id = id;
