@@ -11,9 +11,10 @@ const server = express()
 
 const clients = [];
 
-const webSocketServer = new WebSocketServer.Server({ server });
+const webSocketServer = new WebSocketServer.Server({
+  port: server.port,
+});
 webSocketServer.on('connection', function(ws) {
-  console.log('websocket ready')
 
   const id = Math.random();
   ws.id = id;
@@ -55,6 +56,8 @@ webSocketServer.on('connection', function(ws) {
     )
   });
 });
+
+console.log('Server started at 8000 port');
 
 const  openConnection = (clients) => {
   const prepareClients  = clients.map((client) => ( 
